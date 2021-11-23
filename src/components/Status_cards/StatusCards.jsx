@@ -1,66 +1,74 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Avatar from "@material-ui/core/Avatar";
-import IconButton from "@material-ui/core/IconButton";
-import FavoriteIcon from "@material-ui/icons/Favorite";
-
+import * as React from 'react';
+import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
+import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import { CardHeader } from '@mui/material';
-
+import CardContent from '@mui/material/CardContent';
+import CardActions from '@mui/material/CardActions';
+import { IconButton, Typography } from '@mui/material';
+import { Autorenew } from '@material-ui/icons';
+import { Box } from '@mui/system';
 
 export default function StatusCard() {
 
   return (
-    <Card sx = {{maxWidth:345}}>
-
-      <CardHeader
-        avatar={
-          <Avatar aria-label="recipe" >
-            :)
-          </Avatar>
-        }
+    <Card elevation={4} sx = {{maxWidth:345, }}>
+        <CardHeader
         action={
-          <IconButton aria-label="settings">
-            <FavoriteIcon />
+          <IconButton>
+            <Autorenew/>
           </IconButton>
         }
-        title="CardHeader Example"
-        subheader="A flexbox with avatar, title, subtitle and action"
-      />
+        title = "Weather"
+        subheader = "Muranga"
+          />
 
 <CardContent>
-        <Typography 
-        gutterBottom 
-        variant="h6" 
-        component="div">
-          Description:
-        </Typography>
-        <Typography 
-        gutterBottom 
-        variant="h6" 
-        component="div">
-          Day: 
-        </Typography>
-        <Typography 
-        gutterBottom 
-        variant="h6" 
-        component="div">
-          Temperature: 
-        </Typography>
-        <Typography 
-        gutterBottom 
-        variant="h6" 
-        component="div">
-          Humidity
-        </Typography>
-      </CardContent>
 
+<Box sx={{ display: 'flex', flexDirection: 'row' }}>
+<Typography
+variant="h6"
+noWrap
+component="div"
+sx={{ flexGrow: 1, alignSelf: 'flex-end'}}> 
+ 13th March 2021
+</Typography>
+<Typography
+variant="h6"
+noWrap
+component="div"
+sx={{ flexGrow: 1, alignSelf: 'flex-end', marginLeft: 2}}>
+ Sunny
+</Typography>
+  </Box>
+  <Box sx={{ display: 'flex', flexDirection: 'row' }}>
+<Typography
+variant="h6"
+noWrap
+component="div"
+sx={{ flexGrow: 1, alignSelf: 'flex-end'}}> 
+ Temp: 35°C 
+</Typography>
+<Typography
+variant="h6"
+noWrap
+component="div"
+sx={{ flexGrow: 1, alignSelf: 'flex-end', marginLeft: 2}}>
+ Humidity: 49%
+</Typography>
+  </Box>
+  <Box sx={{ display: 'flex', flexDirection: 'row' }}>
+<Typography
+variant="h6"
+noWrap
+component="div"
+sx={{ flexGrow: 1, alignSelf: 'flex-end'}}> 
+ Alt: 1000mtrs
+</Typography>
 
+  </Box>
+         
+          </CardContent>
     </Card>
   );
 }
